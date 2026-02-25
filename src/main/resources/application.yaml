@@ -1,9 +1,9 @@
 spring:
   application:
-    name: gerenciamento-de-insumos
+    name: management-de-inventory
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/gerenciamento_de_insumos
+    url: jdbc:postgresql://localhost:5432/inventory_management
     username: postgres
     password: admin123
 
