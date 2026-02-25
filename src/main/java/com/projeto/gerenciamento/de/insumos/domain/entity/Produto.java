@@ -43,9 +43,6 @@ public class Produto {
     }
 
     public void limparItensComposicao() {
-        for (ItemComposicaoProduto item : this.itensComposicao) {
-            item.setProduto(null);
-        }
         this.itensComposicao.clear();
     }
 }
