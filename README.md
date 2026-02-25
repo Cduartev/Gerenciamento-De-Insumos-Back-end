@@ -24,6 +24,7 @@ API REST desenvolvida como solução para o teste prático de P&D da Projedata. 
 ## Como Executar
 
 ### 1. Configurar o banco de dados
+Usei o Miro para gerar o meu modelo visual!!
 ![Banco De Dados](https://github.com/user-attachments/assets/b75446d3-96d2-4c37-9556-3958521685a9)
 1. Certifique-se de que o **PostgreSQL** está instalado e em execução.
 2. Crie a base de dados:
