@@ -61,7 +61,7 @@ A API estará disponível em `http://localhost:8080`.
 ```
 
 ## Endpoints da API
-
+![Banco De Dados](https://github.com/user-attachments/assets/b75446d3-96d2-4c37-9556-3958521685a9)
 ### Matérias-Primas — `/api/materias-primas`
 
 | Método | Rota | Descrição |
