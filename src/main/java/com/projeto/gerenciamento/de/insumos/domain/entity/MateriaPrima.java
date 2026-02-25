@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 public class MateriaPrima {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "codigo", nullable = false, length = 50)
     private String codigo;
