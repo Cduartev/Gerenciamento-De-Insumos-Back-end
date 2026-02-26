@@ -2,9 +2,9 @@ package com.project.inventory.service;
 
 import com.project.inventory.domain.entity.RawMaterial;
 import com.project.inventory.domain.repository.RawMaterialRepository;
-import com.project.inventory.dto.materiaprima.UpdateRawMaterialRequest;
-import com.project.inventory.dto.materiaprima.CreateRawMaterialRequest;
-import com.project.inventory.dto.materiaprima.RawMaterialResponse;
+import com.project.inventory.dto.rawmaterial.UpdateRawMaterialRequest;
+import com.project.inventory.dto.rawmaterial.CreateRawMaterialRequest;
+import com.project.inventory.dto.rawmaterial.RawMaterialResponse;
 import com.project.inventory.exception.ResourceNotFoundException;
 import com.project.inventory.exception.BusinessRuleException;
 import com.project.inventory.mapper.RawMaterialMapper;

@@ -1,6 +1,6 @@
 package com.project.inventory.controller;
 
-import com.project.inventory.dto.producao.ProductionRequest;
+import com.project.inventory.dto.production.ProductionRequest;
 import com.project.inventory.service.ProductionService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

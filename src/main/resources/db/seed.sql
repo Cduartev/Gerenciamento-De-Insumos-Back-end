@@ -32,7 +32,7 @@ VALUES
     ('RM-107', 'Água Industrial',                  5000000.0000, 'LITER'),
     ('RM-108', 'Diesel (Frota/Operação)',           200000.0000, 'LITER'),
     ('RM-109', 'Óleo Lubrificante Industrial',       20000.0000, 'LITER'),
-    ('RM-110', 'Rolamento / Peça de Reposição',        500.0000, 'UNIT');
+    ('RM-110', 'Rolamento / Peça de Reposição',        20.00, 'UNIT');
 
 -- ============================================================
 -- PRODUCTS (Commodities / produtos típicos)

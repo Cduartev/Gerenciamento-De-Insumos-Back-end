@@ -105,11 +105,11 @@ A API estará disponível em `http://localhost:8080`.
 | `PUT` | `/api/products/{id}` | Atualizar produto existente |
 | `DELETE` | `/api/products/{id}` | Remover produto |
 
-### Plano de Produção — `/api/production-plans`
+### Plano de Produção — `/api/plans-production`
 
 | Método | Rota | Descrição |
 |---|---|---|
-| `POST` | `/api/production-plans/suggest` | Gerar sugestão de plano ótimo de produção |
+| `POST` | `/api/plans-production/suggest` | Gerar sugestão de plano ótimo de produção |
 
 ## Exemplos de Requisição
 
@@ -143,7 +143,7 @@ POST /api/products
 ### Sugerir Plano de Produção (Production Plan)
 
 ```json
-POST /api/production-plans/suggest
+POST /api/plans-production/suggest
 
 {
   "totalSalesValue": 225.00,
@@ -156,13 +156,13 @@ POST /api/production-plans/suggest
 
 ## Algoritmo de Otimização
 
-O serviço `ProductionPlanService` implementa um algoritmo de **busca exaustiva (backtracking)** que:
+O serviço `ProductionPlanService` implementa um algoritmo de **busca exaustiva (backtracking)** com **Poda (Branch & Bound)** e **Limite de Iterações** que:
 
 1. **Filtra** apenas produtos com composição válida (`ProductCompositionItem`).
 2. **Ordena** produtos por valor decrescente (prioridade aos mais lucrativos).
-3. **Explora** todas as combinações possíveis de quantidades respeitando o estoque da `RawMaterial`.
-4. **Seleciona** a combinação que maximiza o valor total (`totalSalesValue`).
-5. **Desempata** preferindo a combinação com maior quantidade total produzida.
+3. **Explora** combinações de quantidades respeitando o estoque, usando poda matemática para pular caminhos menos lucrativos.
+4. **Interrompe** após 50.000 iterações (Safety Guard) para garantir resposta em milissegundos.
+5. **Seleciona** a combinação que maximiza o valor total (`totalSalesValue`).
 
 ## Estrutura do Projeto
 
@@ -173,13 +173,20 @@ src/main/java/com/project/inventory/
 ├── controller/          # Endpoints REST (Controllers)
 ├── domain/
 │   ├── entity/          # Entidades JPA (Product, RawMaterial, ProductCompositionItem)
-│   ├── enumtype/        # Enums (UnitOfMeasurement)
+│   ├── enumtype/        # Enums (UnitOfMeasurement, Role)
 │   └── repository/      # Spring Data Repositories
 ├── dto/                 # Request e Response (Records Pattern)
+│   ├── auth/            # DTOs de Autenticação
+│   ├── product/         # DTOs de Produtos
+│   ├── rawmaterial/     # DTOs de Matérias-Primas
+│   ├── production/      # DTOs de Ordem de Produção
+│   └── planproduction/  # DTOs do Plano de Otimização
 ├── exception/           # GlobalExceptionHandler (@RestControllerAdvice)
-├── mapper/              # Classes de Mapamento entre DTOs e Entities
-└── service/             # Lógicas de negócio (ProductService, RawMaterialService)
-    └── optimization/    # ProductionPlanService (Algoritmo Backtracking)
+├── mapper/              # Classes de Mapeamento (MapStruct style)
+├── security/            # Configurações de Security e JWT
+└── service/             # Lógicas de negócio
+    ├── optimization/    # ProductionPlanService (Otimização)
+    └── (ProductService, RawMaterialService, etc.)
 ```
 
 ## Testes Unitários

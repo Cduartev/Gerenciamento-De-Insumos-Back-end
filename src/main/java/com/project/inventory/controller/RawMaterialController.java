@@ -1,8 +1,8 @@
 package com.project.inventory.controller;
 
-import com.project.inventory.dto.materiaprima.UpdateRawMaterialRequest;
-import com.project.inventory.dto.materiaprima.CreateRawMaterialRequest;
-import com.project.inventory.dto.materiaprima.RawMaterialResponse;
+import com.project.inventory.dto.rawmaterial.UpdateRawMaterialRequest;
+import com.project.inventory.dto.rawmaterial.CreateRawMaterialRequest;
+import com.project.inventory.dto.rawmaterial.RawMaterialResponse;
 import com.project.inventory.service.RawMaterialService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

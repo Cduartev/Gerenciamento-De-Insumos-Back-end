@@ -5,7 +5,7 @@ import com.project.inventory.domain.entity.ProductCompositionItem;
 import com.project.inventory.domain.entity.RawMaterial;
 import com.project.inventory.domain.repository.ProductRepository;
 import com.project.inventory.domain.repository.RawMaterialRepository;
-import com.project.inventory.dto.producao.ProductionRequest;
+import com.project.inventory.dto.production.ProductionRequest;
 import com.project.inventory.exception.BusinessRuleException;
 import com.project.inventory.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.BeforeEach;

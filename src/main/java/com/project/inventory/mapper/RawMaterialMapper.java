@@ -1,8 +1,8 @@
 package com.project.inventory.mapper;
 
 import com.project.inventory.domain.entity.RawMaterial;
-import com.project.inventory.dto.materiaprima.CreateRawMaterialRequest;
-import com.project.inventory.dto.materiaprima.RawMaterialResponse;
+import com.project.inventory.dto.rawmaterial.CreateRawMaterialRequest;
+import com.project.inventory.dto.rawmaterial.RawMaterialResponse;
 import org.springframework.stereotype.Component;
 
 @Component
