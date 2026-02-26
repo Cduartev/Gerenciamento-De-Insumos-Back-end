@@ -12,6 +12,7 @@ API REST desenvolvida em Java (Spring Boot) como solução para o desafio de P&D
 -  **Otimização de Produção:** Rota dedicada que executa algoritmo de *Backtracking* para sugerir o cenário de **Maior Valor Total de Venda**, priorizando produtos com maior retorno financeiro e resolvendo os conflitos de disputa pelas mesmas matérias-primas.
 -  **Stack Obrigatória:** Construído em Java (Spring Boot) lidando com banco de dados relacional (PostgreSQL).
 -  **Clean Code e Padrões:** Arquitetura limpa (DDD), 100% programada em Inglês, sem lixos de código e tipagem forte usando `Records`.
+-  **Segurança e Autenticação**: Proteção de rotas com **Spring Security** e emissão de tokens **JWT (JSON Web Token)**, possuindo um fluxo completo de Login e Registro.
 -  **Testes Unitários Obrigatórios e Diferenciais**: Cobertura expressiva da lógica do cálculo ótimo e de todas as regras de negócio dos CRUDs usando JUnit 5 e Mockito.
 
 ## Tecnologias Utilizadas
@@ -22,6 +23,7 @@ API REST desenvolvida em Java (Spring Boot) como solução para o desafio de P&D
 | Framework | Spring Boot 3.5 |
 | Persistência | Spring Data JPA / Hibernate |
 | Banco de Dados | PostgreSQL |
+| Segurança | Spring Security + Auth0 JWT |
 | Validação | Bean Validation (Jakarta) |
 | Testes | JUnit 5 + Mockito + AssertJ |
 | Build | Maven Wrapper |
@@ -73,6 +75,13 @@ A API estará disponível em `http://localhost:8080`.
 
 ## Endpoints da API
 
+
+### Autenticação (JWT) — `/api/v1/auth`
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `POST` | `/api/v1/auth/login` | Autentica o usuário e retorna o token JWT |
+| `POST` | `/api/v1/auth/register` | Cadastra um novo usuário no sistema |
 
 ### Matérias-Primas — `/api/raw-materials`
 
