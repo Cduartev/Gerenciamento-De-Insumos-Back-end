@@ -4,7 +4,7 @@
 
 -- Default USUARIO (password is 'admin123')
 INSERT INTO users (name, email, password, role) 
-VALUES ('Administrador', 'admin@admin.com', '$2a$10$Z/b37bO6bZpYI4r42K0uEuV3SgVn6H2.AIL/0p5iQZ2L3b2J0H2F2', 'ADMIN');
+VALUES ('Administrador', 'admin@admin.com', '$2b$10$7549F4FfYtSUHjFYnmTDROmN/hrkLT2h6Xhs4yFdYVfvDL/3TiClC', 'ADMIN');
 
 INSERT INTO raw_materials (code, name, stock_quantity, unit_of_measurement)
 VALUES
